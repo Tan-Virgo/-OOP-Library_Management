@@ -1,0 +1,78 @@
+12
+1
+A101
+Chuyen nhung nguoi co don
+Ha Vu
+NXB Thanh nien
+68000
+2
+A102
+New cutting Edge
+David Tom
+NXB Cambridge
+88900
+E-9001-2018
+1
+A103
+Song thuc te giua doi thuc dung
+Me Mong
+NXB Van hoc VN
+98000
+1
+A104
+Doi con dai ha tat phai hoang mang
+Lam Hy
+NXB The gioi
+115000
+2
+A105
+Key to success
+Black Rya
+NXB Skills
+135500
+W-9001-2019
+1
+A106
+Ttuoi tre dang gia bao nhieu
+Rosie Nguyen
+NXB Thanh nien
+86500
+2
+A107
+Rich habits
+Thomas Cobilcy
+NXB Thoi dai
+109600
+Q-9001-2019
+2
+A108
+History Hunmans
+John Harver
+NXB History
+102900
+O-9001-2017
+1
+A109
+Truyen Kieu
+Nguyen Du
+NXB Van hoc VN
+69000
+1
+A110
+Lap trinh huong doi tuong
+Nhieu tac gia
+NXB KH-KT
+89000
+2
+A111
+Animal Worth
+John Ado
+NXB Knowledge
+109900
+F-9001-2019
+1
+A112
+Mat Biec
+Nguyen Nhat Anh
+NXB Van hoc VN
+99000

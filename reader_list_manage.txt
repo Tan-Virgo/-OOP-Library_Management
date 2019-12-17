@@ -1,0 +1,29 @@
+7
+1001
+Nguyen Tran Anh Duy
+1 12 2019
+A109
+1002
+Lam Ha Thanh Hoa
+23 11 2019
+A111
+1003
+Tran Hoang Thien An
+4 12 2019
+A110
+1004
+Le Hoang Gia Huy
+27 11 2019
+A101
+1005
+Nguyen Thien Phuc
+25 11 2019
+A109
+1006
+Le Hoai Vy Lan
+3 12 2019
+A112
+1007
+Han Hoa Than
+20 11 2019
+A106
