@@ -1,14 +1,54 @@
       _________ DANH SACH CAC DOC GIA MUON SACH TRONG THU VIEN ___________
-  4/12/2019
+  19/12/2019
 
   Co tong cong 7 doc gia muon sach
 
- + Quyen thu 1 : 
+ + Doc gia thu 1 : 
      Ma doc gia:              1001
      Ten tac gia:             Nguyen Tran Anh Duy
-     Ngay muon sach:          1/12/2019
+     Ngay muon sach:          18/12/2019
+     So sach muon:            2
+       + Ma sach muon thu 1:  A101
+       + Ma sach muon thu 2:  A103
 
         === Thong tin sach da muon ===
+
+   Quyen thu 1: 
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A101
+     Ten sach:                Chuyen nhung nguoi co don
+     Tac gia:                 Ha Vu
+     Nha xuat ban:            NXB Thanh nien
+     Gia sach:                68 nghin VND
+
+   Quyen thu 2: 
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A103
+     Ten sach:                Song thuc te giua doi thuc dung
+     Tac gia:                 Me Mong
+     Nha xuat ban:            NXB Van hoc VN
+     Gia sach:                98 nghin VND
+-----------------------------------------------------------------------
+ + Doc gia thu 2 : 
+     Ma doc gia:              1002
+     Ten tac gia:             Le Ha Thao An
+     Ngay muon sach:          10/12/2019
+     So sach muon:            2
+       + Ma sach muon thu 1:  A102
+       + Ma sach muon thu 2:  A109
+
+        === Thong tin sach da muon ===
+
+   Quyen thu 1: 
+     Loai sach muon:          Sach Ngoai van
+     Ma sach:                 A102
+     Ten sach:                New cutting Edge
+     Tac gia:                 David Tom
+     Nha xuat ban:            NXB Cambridge
+     Gia sach:                88.9 nghin VND
+     Ma so ISBN:              E-9001-2018
+
+   Quyen thu 2: 
      Loai sach muon:          Sach Tieng Viet
      Ma sach:                 A109
      Ten sach:                Truyen Kieu
@@ -16,12 +56,26 @@
      Nha xuat ban:            NXB Van hoc VN
      Gia sach:                69 nghin VND
 -----------------------------------------------------------------------
- + Quyen thu 2 : 
-     Ma doc gia:              1002
-     Ten tac gia:             Lam Ha Thanh Hoa
-     Ngay muon sach:          23/11/2019
+ + Doc gia thu 3 : 
+     Ma doc gia:              1003
+     Ten tac gia:             Nguyen Vu Thai Minh
+     Ngay muon sach:          12/12/2019
+     So sach muon:            3
+       + Ma sach muon thu 1:  A110
+       + Ma sach muon thu 2:  A111
+       + Ma sach muon thu 3:  A112
 
         === Thong tin sach da muon ===
+
+   Quyen thu 1: 
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A110
+     Ten sach:                Lap trinh huong doi tuong
+     Tac gia:                 Nhieu tac gia
+     Nha xuat ban:            NXB KH-KT
+     Gia sach:                89 nghin VND
+
+   Quyen thu 2: 
      Loai sach muon:          Sach Ngoai van
      Ma sach:                 A111
      Ten sach:                Animal Worth
@@ -29,52 +83,8 @@
      Nha xuat ban:            NXB Knowledge
      Gia sach:                109.9 nghin VND
      Ma so ISBN:              F-9001-2019
------------------------------------------------------------------------
- + Quyen thu 3 : 
-     Ma doc gia:              1003
-     Ten tac gia:             Tran Hoang Thien An
-     Ngay muon sach:          4/12/2019
 
-        === Thong tin sach da muon ===
-     Loai sach muon:          Sach Tieng Viet
-     Ma sach:                 A110
-     Ten sach:                Lap trinh huong doi tuong
-     Tac gia:                 Nhieu tac gia
-     Nha xuat ban:            NXB KH-KT
-     Gia sach:                89 nghin VND
------------------------------------------------------------------------
- + Quyen thu 4 : 
-     Ma doc gia:              1004
-     Ten tac gia:             Le Hoang Gia Huy
-     Ngay muon sach:          27/11/2019
-
-        === Thong tin sach da muon ===
-     Loai sach muon:          Sach Tieng Viet
-     Ma sach:                 A101
-     Ten sach:                Chuyen nhung nguoi co don
-     Tac gia:                 Ha Vu
-     Nha xuat ban:            NXB Thanh nien
-     Gia sach:                68 nghin VND
------------------------------------------------------------------------
- + Quyen thu 5 : 
-     Ma doc gia:              1005
-     Ten tac gia:             Nguyen Thien Phuc
-     Ngay muon sach:          25/11/2019
-
-        === Thong tin sach da muon ===
-     Loai sach muon:          Sach Tieng Viet
-     Ma sach:                 A109
-     Ten sach:                Truyen Kieu
-     Tac gia:                 Nguyen Du
-     Nha xuat ban:            NXB Van hoc VN
-     Gia sach:                69 nghin VND
------------------------------------------------------------------------
- + Quyen thu 6 : 
-     Ma doc gia:              1006
-     Ten tac gia:             Le Hoai Vy Lan
-     Ngay muon sach:          3/12/2019
-
-        === Thong tin sach da muon ===
+   Quyen thu 3: 
      Loai sach muon:          Sach Tieng Viet
      Ma sach:                 A112
      Ten sach:                Mat Biec
@@ -82,16 +92,110 @@
      Nha xuat ban:            NXB Van hoc VN
      Gia sach:                99 nghin VND
 -----------------------------------------------------------------------
- + Quyen thu 7 : 
-     Ma doc gia:              1007
-     Ten tac gia:             Han Hoa Than
-     Ngay muon sach:          20/11/2019
+ + Doc gia thu 4 : 
+     Ma doc gia:              1004
+     Ten tac gia:             Vy Thien Phuc
+     Ngay muon sach:          19/12/2019
+     So sach muon:            1
+       + Ma sach muon thu 1:  A110
 
         === Thong tin sach da muon ===
+
+   Quyen thu 1: 
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A110
+     Ten sach:                Lap trinh huong doi tuong
+     Tac gia:                 Nhieu tac gia
+     Nha xuat ban:            NXB KH-KT
+     Gia sach:                89 nghin VND
+-----------------------------------------------------------------------
+ + Doc gia thu 5 : 
+     Ma doc gia:              1005
+     Ten tac gia:             Le Hoa Thai Bao
+     Ngay muon sach:          10/12/2019
+     So sach muon:            2
+       + Ma sach muon thu 1:  A107
+       + Ma sach muon thu 2:  A106
+
+        === Thong tin sach da muon ===
+
+   Quyen thu 1: 
+     Loai sach muon:          Sach Ngoai van
+     Ma sach:                 A107
+     Ten sach:                Rich habits
+     Tac gia:                 Thomas Cobilcy
+     Nha xuat ban:            NXB Thoi dai
+     Gia sach:                109.6 nghin VND
+     Ma so ISBN:              Q-9001-2019
+
+   Quyen thu 2: 
      Loai sach muon:          Sach Tieng Viet
      Ma sach:                 A106
      Ten sach:                Ttuoi tre dang gia bao nhieu
      Tac gia:                 Rosie Nguyen
      Nha xuat ban:            NXB Thanh nien
      Gia sach:                86.5 nghin VND
+-----------------------------------------------------------------------
+ + Doc gia thu 6 : 
+     Ma doc gia:              1006
+     Ten tac gia:             Nguyen Vo Hao Nam
+     Ngay muon sach:          17/12/2019
+     So sach muon:            1
+       + Ma sach muon thu 1:  A106
+
+        === Thong tin sach da muon ===
+
+   Quyen thu 1: 
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A106
+     Ten sach:                Ttuoi tre dang gia bao nhieu
+     Tac gia:                 Rosie Nguyen
+     Nha xuat ban:            NXB Thanh nien
+     Gia sach:                86.5 nghin VND
+-----------------------------------------------------------------------
+ + Doc gia thu 7 : 
+     Ma doc gia:              1007
+     Ten tac gia:             Tran Ha Lien Hoa
+     Ngay muon sach:          15/12/2019
+     So sach muon:            4
+       + Ma sach muon thu 1:  A110
+       + Ma sach muon thu 2:  A101
+       + Ma sach muon thu 3:  A105
+       + Ma sach muon thu 4:  A108
+
+        === Thong tin sach da muon ===
+
+   Quyen thu 1: 
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A110
+     Ten sach:                Lap trinh huong doi tuong
+     Tac gia:                 Nhieu tac gia
+     Nha xuat ban:            NXB KH-KT
+     Gia sach:                89 nghin VND
+
+   Quyen thu 2: 
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A101
+     Ten sach:                Chuyen nhung nguoi co don
+     Tac gia:                 Ha Vu
+     Nha xuat ban:            NXB Thanh nien
+     Gia sach:                68 nghin VND
+
+   Quyen thu 3: 
+     Loai sach muon:          Sach Ngoai van
+     Ma sach:                 A105
+     Ten sach:                Key to success
+     Tac gia:                 Black Rya
+     Nha xuat ban:            NXB Skills
+     Gia sach:                135.5 nghin VND
+     Ma so ISBN:              W-9001-2019
+
+   Quyen thu 4: 
+     Loai sach muon:          Sach Ngoai van
+     Ma sach:                 A108
+     Ten sach:                History Hunmans
+     Tac gia:                 John Harver
+     Nha xuat ban:            NXB History
+     Gia sach:                102.9 nghin VND
+     Ma so ISBN:              O-9001-2017
 -----------------------------------------------------------------------

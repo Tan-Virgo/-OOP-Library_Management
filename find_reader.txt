@@ -1,8 +1,8 @@
-     Ma doc gia:              1005
-     Ten tac gia:             Nguyen Thien Phuc
-     Ngay muon sach:          25/11/2019
-     Ma sach:                 A109
-     Ten sach:                Truyen Kieu
-     Tac gia:                 Nguyen Du
-     Nha xuat ban:            NXB Van hoc VN
-     Gia sach:                69 nghin VND
+     Ma doc gia:              1007
+     Ten tac gia:             Tran Ha Lien Hoa
+     Ngay muon sach:          15/12/2019
+     So sach muon:            4
+       + Ma sach muon thu 1:  A110
+       + Ma sach muon thu 2:  A101
+       + Ma sach muon thu 3:  A105
+       + Ma sach muon thu 4:  A108

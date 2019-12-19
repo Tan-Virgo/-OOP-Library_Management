@@ -1,60 +1,55 @@
 ______________DANH SACH DOC GIA HET HAN MUON SACH___________________
-Thoi gian in: 6/12/2019  10:21
+Thoi gian in: 19/12/2019  15:32
 
  + Doc gia het han thu 1 : 
      Ma doc gia:              1002
-     Ten doc gia:             Lam Ha Thanh Hoa
-     Ngay muon sach:          23/11/2019
+     Ten doc gia:             Le Ha Thao An
+     Ngay muon sach:          10/12/2019
+     So sach muon:            2
 
                -----Thong tin sach da muon----- 
+
+   Quyen thu 1:
      Loai sach muon:          Sach Ngoai van
-     Ma sach:                 A111
-     Ten sach:                Animal Worth
-     Tac gia:                 John Ado
-     Nha xuat ban:            NXB Knowledge
-     Gia sach:                109.9 nghin VND
-     Ma so ISBN:              F-9001-2019
-   ==> So tien phat:          120 nghin VND
+     Ma sach:                 A102
+     Ten sach:                New cutting Edge
+     Tac gia:                 David Tom
+     Nha xuat ban:            NXB Cambridge
+     Gia sach:                88.9 nghin VND
+     Ma so ISBN:              E-9001-2018
 
- + Doc gia het han thu 2 : 
-     Ma doc gia:              1004
-     Ten doc gia:             Le Hoang Gia Huy
-     Ngay muon sach:          27/11/2019
-
-               -----Thong tin sach da muon----- 
-     Loai sach muon:          Sach Tieng Viet
-     Ma sach:                 A101
-     Ten sach:                Chuyen nhung nguoi co don
-     Tac gia:                 Ha Vu
-     Nha xuat ban:            NXB Thanh nien
-     Gia sach:                68 nghin VND
-   ==> So tien phat:          20 nghin VND
-
- + Doc gia het han thu 3 : 
-     Ma doc gia:              1005
-     Ten doc gia:             Nguyen Thien Phuc
-     Ngay muon sach:          25/11/2019
-
-               -----Thong tin sach da muon----- 
+   Quyen thu 2:
      Loai sach muon:          Sach Tieng Viet
      Ma sach:                 A109
      Ten sach:                Truyen Kieu
      Tac gia:                 Nguyen Du
      Nha xuat ban:            NXB Van hoc VN
      Gia sach:                69 nghin VND
-   ==> So tien phat:          40 nghin VND
+   ==> So tien phat:          60 nghin VND
 
- + Doc gia het han thu 4 : 
-     Ma doc gia:              1007
-     Ten doc gia:             Han Hoa Than
-     Ngay muon sach:          20/11/2019
+ + Doc gia het han thu 2 : 
+     Ma doc gia:              1005
+     Ten doc gia:             Le Hoa Thai Bao
+     Ngay muon sach:          10/12/2019
+     So sach muon:            2
 
                -----Thong tin sach da muon----- 
+
+   Quyen thu 1:
+     Loai sach muon:          Sach Ngoai van
+     Ma sach:                 A107
+     Ten sach:                Rich habits
+     Tac gia:                 Thomas Cobilcy
+     Nha xuat ban:            NXB Thoi dai
+     Gia sach:                109.6 nghin VND
+     Ma so ISBN:              Q-9001-2019
+
+   Quyen thu 2:
      Loai sach muon:          Sach Tieng Viet
      Ma sach:                 A106
      Ten sach:                Ttuoi tre dang gia bao nhieu
      Tac gia:                 Rosie Nguyen
      Nha xuat ban:            NXB Thanh nien
      Gia sach:                86.5 nghin VND
-   ==> So tien phat:          90 nghin VND
+   ==> So tien phat:          60 nghin VND
 

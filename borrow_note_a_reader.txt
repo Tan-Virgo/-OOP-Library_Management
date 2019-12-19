@@ -1,13 +1,24 @@
 
  ____________________ PHIEU MUON SACH ____________________ 
 
-Thoi gian in phieu: 17/12/2019  21:17
+Thoi gian in phieu: 19/12/2019  15:32
 
-     Ma doc gia:              1002
-     Ten doc gia:             Lam Ha Thanh Hoa
-     Ngay muon sach:          23/11/2019
+     Ma doc gia:              1003
+     Ten doc gia:             Nguyen Vu Thai Minh
+     Ngay muon sach:          12/12/2019
+     So sach muon:            3
 
                -----Thong tin sach da muon----- 
+
+   Quyen thu 1:
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A110
+     Ten sach:                Lap trinh huong doi tuong
+     Tac gia:                 Nhieu tac gia
+     Nha xuat ban:            NXB KH-KT
+     Gia sach:                89 nghin VND
+
+   Quyen thu 2:
      Loai sach muon:          Sach Ngoai van
      Ma sach:                 A111
      Ten sach:                Animal Worth
@@ -15,6 +26,14 @@ Thoi gian in phieu: 17/12/2019  21:17
      Nha xuat ban:            NXB Knowledge
      Gia sach:                109.9 nghin VND
      Ma so ISBN:              F-9001-2019
+
+   Quyen thu 3:
+     Loai sach muon:          Sach Tieng Viet
+     Ma sach:                 A112
+     Ten sach:                Mat Biec
+     Tac gia:                 Nguyen Nhat Anh
+     Nha xuat ban:            NXB Van hoc VN
+     Gia sach:                99 nghin VND
 
                                         Quan ly thu vien
 ____________________________________________________________

@@ -1,29 +1,44 @@
 7
 1001
 Nguyen Tran Anh Duy
-1 12 2019
-A109
-1002
-Lam Ha Thanh Hoa
-23 11 2019
-A111
-1003
-Tran Hoang Thien An
-4 12 2019
-A110
-1004
-Le Hoang Gia Huy
-27 11 2019
+18 12 2019
+2
 A101
-1005
-Nguyen Thien Phuc
-25 11 2019
+A103
+1002
+Le Ha Thao An
+10 12 2019
+2
+A102
 A109
-1006
-Le Hoai Vy Lan
-3 12 2019
+1003
+Nguyen Vu Thai Minh
+12 12 2019
+3
+A110
+A111
 A112
-1007
-Han Hoa Than
-20 11 2019
+1004
+Vy Thien Phuc
+19 12 2019
+1
+A110
+1005
+Le Hoa Thai Bao
+10 12 2019
+2
+A107
 A106
+1006
+Nguyen Vo Hao Nam
+17 12 2019
+1
+A106
+1007
+Tran Ha Lien Hoa
+15 12 2019
+4
+A110
+A101
+A105
+A108
