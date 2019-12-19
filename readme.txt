@@ -21,7 +21,9 @@ DO_AN_2_QuanLyThuVien/Release/QuanLyThuVien.exe
 
 -  Cần đọc kỹ menu chương trình khi muốn thao tác.
 
--  Đã có thông tin danh sách sách và danh sách các đọc giả em đã chuẩn bị sẵn trong file "book_list.txt" và "reader_list.txt", chỉ cần thực hiện các thao tác khác. Nếu muốn nhập dữ liệu mới lại từ đầu thì cần xóa dữ liệu trong các file "book_list_manage.txt" và "reader_list_manage.txt" trước khi mở file .exe lên và nhập mới .
+-  Đã có thông tin danh sách sách và danh sách các đọc giả em đã chuẩn bị sẵn trong file "book_list.txt" và "reader_list.txt". Khi chạy chương trình, gõ 1 và 6 để lấy dữ liệu đó và chỉ cần thực hiện các thao tác khác. 
+
+-  Nếu muốn nhập dữ liệu mới lại từ đầu thì cần xóa dữ liệu trong các file "book_list_manage.txt" và "reader_list_manage.txt" trước khi mở file .exe lên và nhập mới.
 
 
 Tên các file quan lý và chức năng tương ứng:
