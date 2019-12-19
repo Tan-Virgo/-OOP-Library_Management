@@ -27,15 +27,15 @@ int main()
 			<< "  ##        + Neu chua co he thong se yeu cau nhap MOI danh sach doc gia                                       ##" << endl
 			<< "  ##         (Ket thuc nhap he thong se tu dong xuat ra file \"reader_list.txt\"                                 ##" << endl
 			<< "  ##      7  -  Them thong tin mot doc gia moi                                                                 ##" << endl
-			<< "  ##      8  - Xoa mot doc gia co MaDocGia biet truoc                                                          ##" << endl
-			<< "  ##      9  - Sua thong tin mot doc gia co MaDocGia biet truoc                                                ##" << endl
-			<< "  ##      10 - Tim doc gia co MaDocGia biet truoc va ghi vao file \"find_reader.txt\"                            ##" << endl
+			<< "  ##      8  -  Xoa mot doc gia co MaDocGia biet truoc                                                         ##" << endl
+			<< "  ##      9  -  Sua thong tin mot doc gia co MaDocGia biet truoc                                               ##" << endl
+			<< "  ##      10 -  Tim doc gia co MaDocGia biet truoc va ghi vao file \"find_reader.txt\"                           ##" << endl
 			<< "  ##  - IN PHIEU:                                                                                              ##" << endl
-			<< "  ##      11 - In phieu muon sach cua doc gia co MaDocGia va ghi vao file \"borrow_a_reader.txt\"                ##" << endl
-			<< "  ##      12 - In phieu tra sach cua doc gia co MaDocGia va ghi vao file \"return_a_reader.txt\"                 ##" << endl
-			<< "  ##      13 - In phieu muon sach cua tat ca cac doc gia vao file \"borrow_note.txt\"                            ##" << endl
-			<< "  ##      14 - In phieu tra sach cua tat ca cac doc gia vao file \"return_note.txt\"                             ##" << endl
-			<< "  ##      15 - Liet ke danh sach doc gia het han muon sach \"out_of_date.txt\"                                   ##" << endl
+			<< "  ##      11 -  In phieu muon sach cua doc gia co MaDocGia va ghi vao file \"borrow_a_reader.txt\"               ##" << endl
+			<< "  ##      12 -  In phieu tra sach cua doc gia co MaDocGia va ghi vao file \"return_a_reader.txt\"                ##" << endl
+			<< "  ##      13 -  In phieu muon sach cua tat ca cac doc gia vao file \"borrow_note.txt\"                           ##" << endl
+			<< "  ##      14 -  In phieu tra sach cua tat ca cac doc gia vao file \"return_note.txt\"                            ##" << endl
+			<< "  ##      15 -  Liet ke danh sach doc gia het han muon sach \"out_of_date.txt\"                                  ##" << endl
 			<< "  ##                                                                                                           ##" << endl
 			<< "  ###############################################################################################################" << endl << endl;
 
@@ -59,10 +59,11 @@ int main()
 			// kiem tra du lieu hoac nhap moi danh sach sach
 			else if (key == 1)
 			{
+				
 				if (Q.KTMangSach() == true)
 				{
+					Q.ganMangSach(Q.DocMangSachTuFile());
 					cout << "  -> Da co danh sach sach nhap truoc do!" << endl;
-					Q.ganMangSach(Q.DocMangSachTuFile()); // Cap nhat du lieu da co truoc do vao mang hien tai
 				}
 				else
 				{
@@ -173,10 +174,11 @@ int main()
 			// kiem tra du lieu hoac nhap moi danh sach doc gia
 			else if (key == 6)
 			{
+				
 				if (Q.KTMangDocGia() == true)
 				{
-					cout << "  -> Da co danh sach doc gia nhap truoc do!" << endl;
 					Q.ganMangDocGia(Q.DocMangDocGiaTuFile());
+					cout << "  -> Da co danh sach doc gia nhap truoc do!" << endl;
 				}
 				else
 				{
@@ -278,7 +280,6 @@ int main()
 				else
 				{
 					Q.TimDocGia(id)->XuatDayDu(outfile_find_reader);
-					Q.TimSach(Q.TimDocGia(id)->layMaSachMuon())->XuatDayDu(outfile_find_reader);
 					cout << "   -> 100% - Da tim ra." << endl;
 				}
 				outfile_find_reader.close();

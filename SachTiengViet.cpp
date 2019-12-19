@@ -1,14 +1,14 @@
 #include "SachTiengViet.h"
 
 // ham tao khong doi so
-//SachTiengViet::SachTiengViet()
-//{
-//	MaSach = "";
-//	TenSach = "";
-//	TacGia = "";
-//	NhaXuatBan = "";
-//	GiaSach = 0;
-//}
+SachTiengViet::SachTiengViet()
+{
+	MaSach = "";
+	TenSach = "";
+	TacGia = "";
+	NhaXuatBan = "";
+	GiaSach = 0;
+}
 
 // ham tao co doi so
 SachTiengViet::SachTiengViet(string id, string name, string author, string producer, float price)
@@ -159,27 +159,26 @@ void SachTiengViet::XuatDayDu(ofstream& out)
 }
 
 // Doc sach Tieng Viet tu file
-SachTiengViet SachTiengViet::DocSach(ifstream& DocSach)
+SachTiengViet& SachTiengViet::DocSach(ifstream& DocSach)
 {
-	//SachTiengViet TV;
-	string s1, s2, s3, s4, s;
+	string s1, s2, s3, s4;
 
 	// Doc ma sach
 	DocSach.get();
-	getline(DocSach, s);
-	MaSach = s;
+	getline(DocSach, s1);
+	MaSach = s1;
 
 	// Doc ten sach
-	getline(DocSach, s1);
-	TenSach = s1;
+	getline(DocSach, s2);
+	TenSach = s2;
 
 	// Doc tac gia
-	getline(DocSach, s2);
-	TacGia = s2;
+	getline(DocSach, s3);
+	TacGia = s3;
 
 	// Doc nha xuat ban
-	getline(DocSach, s3);
-	NhaXuatBan = s3;
+	getline(DocSach, s4);
+	NhaXuatBan = s4;
 
 	// doc gia sach
 	float p;

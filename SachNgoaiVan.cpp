@@ -35,26 +35,26 @@ void SachNgoaiVan::XuatDayDu(ofstream& out)
 
 
 // Doc sach Ngoai Van tu file
-SachNgoaiVan SachNgoaiVan::DocSach(ifstream& DocSach) 
+SachNgoaiVan& SachNgoaiVan::DocSach(ifstream& DocSach) 
 {
-	string s1, s2, s3, s4, s;
+	string s1, s2, s3, s4, s5;
 
 	// Doc ma sach
 	DocSach.get();
-	getline(DocSach, s);
-	MaSach = s;
+	getline(DocSach, s1);
+	MaSach = s1;
 
 	// Doc ten sach
-	getline(DocSach, s1);
-	TenSach = s1;
+	getline(DocSach, s2);
+	TenSach = s2;
 
 	// Doc tac gia
-	getline(DocSach, s2);
-	TacGia = s2;
+	getline(DocSach, s3);
+	TacGia = s3;
 
 	// Doc nha xuat ban
-	getline(DocSach, s3);
-	NhaXuatBan = s3;
+	getline(DocSach, s4);
+	NhaXuatBan = s4;
 
 	// doc gia sach
 	float p;
@@ -62,9 +62,9 @@ SachNgoaiVan SachNgoaiVan::DocSach(ifstream& DocSach)
 	GiaSach = p;
 
 	// Doc so ISBN
-	DocSach.get();
-	getline(DocSach, s4);
-	ISBN = s4;
+	DocSach.ignore();
+	getline(DocSach, s5);
+	ISBN = s5;
 	
 	return *this;
 }

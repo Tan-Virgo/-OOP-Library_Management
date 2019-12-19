@@ -41,12 +41,12 @@ public:
 	virtual void XuatDayDu(ofstream& out);
 
 	// Doc sach Tieng Viet tu file
-	SachTiengViet DocSach(ifstream& DocSach);
+	SachTiengViet& DocSach(ifstream& DocSach);
 
 
 public:
 	// ham tao khong doi so
-	SachTiengViet() {};
+	SachTiengViet();
 	// ham tao co doi so
 	SachTiengViet(string id, string name, string author, string producer, float price);
 	SachTiengViet(string id, string name, string author, float price);

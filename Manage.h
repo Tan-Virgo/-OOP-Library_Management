@@ -148,10 +148,10 @@ public:
 
 	
 	// Doc mang sach tu file
-	vector<SachTiengViet*> DocMangSachTuFile() const;
+	vector<SachTiengViet*> DocMangSachTuFile();
 
 	// Doc mang doc gia tu file
-	vector<DocGia*> DocMangDocGiaTuFile() const;
+	vector<DocGia*> DocMangDocGiaTuFile();
 
 	// Kiem tra da co du lieu cho mang sach chua
 	bool KTMangSach();

@@ -8,11 +8,11 @@ DocGia::DocGia()
 	Ngay = 1;
 	Thang = 1;
 	Nam = 2000;
-	MaSachMuon = "";
+	SoSachMuon = 0;
 }
 
 // ham tao co doi so
-DocGia::DocGia(string id, string name, int day, int month, int year, string id_book)
+DocGia::DocGia(string id, string name, int day, int month, int year, int num)
 {
 	MaDocGia = id;
 	TenDocGia = name;
@@ -21,20 +21,24 @@ DocGia::DocGia(string id, string name, int day, int month, int year, string id_b
 	Ngay = day;
 	Thang = month;
 	Nam = year;
-	MaSachMuon = id_book;
+	if (num <= 0)
+		throw "Sai so sach muon";
+	SoSachMuon = num;
 }
 
-DocGia::DocGia(string id, string name, string id_book)
+DocGia::DocGia(string id, string name, int num)
 {
 	MaDocGia = id;
 	TenDocGia = name;
-	MaSachMuon = id_book;
+	SoSachMuon = num;
 }
 
-DocGia::DocGia(string id, string id_book)
+DocGia::DocGia(string id, int num)
 {
 	MaDocGia = id;
-	MaSachMuon = id_book;
+	if (num <= 0)
+		throw "Sai so sach muon";
+	SoSachMuon = num;
 }
 
 // ham tao sao chep
@@ -45,7 +49,7 @@ DocGia::DocGia(const DocGia& other)
 	Ngay = other.Ngay;
 	Thang = other.Thang;
 	Nam = other.Nam;
-	MaSachMuon = other.MaSachMuon;
+	SoSachMuon = other.SoSachMuon;
 }
 
 // ham huy
@@ -81,9 +85,14 @@ int DocGia::layNam() const
 	return Nam;
 }
 
-string DocGia::layMaSachMuon() const
+int DocGia::laySoSachMuon() const
 {
-	return MaSachMuon;
+	return SoSachMuon;
+}
+
+string DocGia::layMaSachMuon(int vt) const
+{
+	return MangSachMuon[vt];
 }
 
 void DocGia::ganMaDocGia(string id)
@@ -117,11 +126,17 @@ void DocGia::ganNam(int year)
 	Nam = year;
 }
 
-void DocGia::ganMaSachMuon(string id_book)
+void DocGia::ganSoSachMuon(int num)
 {
-	MaSachMuon = id_book;
+	if (num <= 0)
+		throw "Sai so sach muon";
+	SoSachMuon = num;
 }
 
+void DocGia::ganMaSachMuon(int vt, string id)
+{
+	MangSachMuon[vt] = id;
+}
 
 // ham kiem tra tinh hop le cua ngay thang nam nhap vao
 bool DocGia::KTdate(int ngay, int thang, int nam)
@@ -182,7 +197,6 @@ int DocGia::KhoangThoiGian(int day, int month, int year)
 // ham nhap, xuat
 void DocGia::Nhap()
 {
-	cin.ignore();
 	cout << "Nhap ma doc gia: ";
 	getline(cin, MaDocGia);
 	cout << "Nhap ten doc gia: ";
@@ -201,9 +215,16 @@ void DocGia::Nhap()
 		else
 			break;
 	}
-	cin.ignore();
-	cout << "Nhap ma sach muon: ";
-	getline(cin, MaSachMuon);
+	while (1)
+	{
+		cout << "Nhap so sach muon: ";
+		cin >> SoSachMuon;
+		if (SoSachMuon <= 0)
+			cout << " <!> So sach muon phai lon hon 0. Nhap lai" << endl;
+		else
+			break;
+	}
+	
 }
 
 void DocGia::Xuat(ofstream& out)
@@ -211,7 +232,11 @@ void DocGia::Xuat(ofstream& out)
 	out << MaDocGia << endl;
 	out << TenDocGia << endl;
 	out << Ngay << " " << Thang << " " << Nam << endl;
-	out << MaSachMuon << endl;
+	out << SoSachMuon << endl;
+	for (int i = 0; i < SoSachMuon; i++)
+	{
+		out << MangSachMuon[i] << endl;
+	}
 }
 
 void DocGia::XuatDayDu(ofstream& out)
@@ -219,17 +244,21 @@ void DocGia::XuatDayDu(ofstream& out)
 	out << "     Ma doc gia:              " << MaDocGia << endl;
 	out << "     Ten tac gia:             " << TenDocGia << endl;
 	out << "     Ngay muon sach:          " << Ngay << "/" << Thang << "/" << Nam << endl;
+	out << "     So sach muon:            " << SoSachMuon << endl;
+	for (int i = 0; i < SoSachMuon; i++)
+	{
+		out << "       + Ma sach muon thu " << i + 1 << ":  " << MangSachMuon[i] << endl;
+	}
 }
 
 
 
 // Doc doc gia tu file
-DocGia DocGia::DocDocGia(ifstream& DocDocGia)
+DocGia& DocGia::DocDocGia(ifstream& DocDocGia)
 {
-	string s1, s2, s3, s4;
+	string s1, s2;
 
 	// doc ma doc gia
-	//DocDocGia.get();
 	getline(DocDocGia, s1);
 	MaDocGia = s1;
 
@@ -246,10 +275,18 @@ DocGia DocGia::DocDocGia(ifstream& DocDocGia)
 	DocDocGia >> year;
 	Nam = year;
 
-	// doc ma sach muon
+	// doc so sach muon
+	int num;
+	DocDocGia >> num;
+	SoSachMuon = num;
+
 	DocDocGia.get();
-	getline(DocDocGia, s3);
-	MaSachMuon = s3;
+	for (int i = 0; i < num; i++)
+	{
+		string s3;
+		getline(DocDocGia, s3);
+		ganMaSachMuon(i, s3);
+	}
 
 	return *this;
 }

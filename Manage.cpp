@@ -197,13 +197,29 @@ void Manage::NhapMangDocGia()
 		else if (key == 1)
 		{
 			p = new DocGia();
+			cin.ignore();
 			p->Nhap();
-			if (KTid_book(p->layMaSachMuon()) == false)
+			cin.ignore();
+			for (int i = 0; i < p->laySoSachMuon(); i++)
 			{
-				cout << "  <!> Ma sach nay khong co trong thu vien. Nhap lai." << endl;
+				while (1)
+				{
+					string id;
+					cout << "Nhap ma sach muon thu " << i + 1 << ": ";
+					getline(cin, id);
+				
+					if (KTid_book(id) == false)
+					{
+						cout << "  <!> Ma sach nay khong co trong thu vien. Nhap lai." << endl;
+					}
+					else
+					{
+						p->ganMaSachMuon(i, id);
+						break;
+					}
+				}
 			}
-			else
-				reader.push_back(p);
+			reader.push_back(p);
 		}
 		else
 		{
@@ -240,15 +256,19 @@ void Manage::XuatMangDocGiaDayDu(ofstream& out)
 		out << "  Co tong cong " << reader.size() << " doc gia muon sach" << endl << endl;
 		for (int i = 0; i < reader.size(); i++)
 		{
-			out << " + Quyen thu " << i + 1 << " : " << endl;
+			out << " + Doc gia thu " << i + 1 << " : " << endl;
 			reader[i]->XuatDayDu(out);
 			out << "\n        === Thong tin sach da muon ===" << endl;
-			SachTiengViet* p = TimSach(reader[i]->layMaSachMuon());
-			if (p->KTSachTiengViet() == true)
-				out << "     Loai sach muon:          Sach Tieng Viet" << endl;
-			else
-				out << "     Loai sach muon:          Sach Ngoai van" << endl;
-			p->XuatDayDu(out);
+			for (int j = 0; j < reader[i]->laySoSachMuon(); j++)
+			{
+				out << "\n   Quyen thu " << j + 1 << ": " << endl;
+				SachTiengViet* p = TimSach(reader[i]->layMaSachMuon(j));
+				if (p->KTSachTiengViet() == true)
+					out << "     Loai sach muon:          Sach Tieng Viet" << endl;
+				else
+					out << "     Loai sach muon:          Sach Ngoai van" << endl;
+				p->XuatDayDu(out);
+			}
 			out << "-----------------------------------------------------------------------" << endl;
 		}
 	}
@@ -257,22 +277,31 @@ void Manage::XuatMangDocGiaDayDu(ofstream& out)
 // Them doc gia
 void Manage::ThemDocGia()
 {
-	while (1)
+	cout << "Nhap thong tin doc gia can them: " << endl;
+	DocGia* p = new DocGia();
+	cin.ignore();
+	p->Nhap();
+	cin.ignore();
+	for (int i = 0; i < p->laySoSachMuon(); i++)
 	{
-		cout << "Nhap thong tin doc gia can them: " << endl;
-		DocGia* p;
-		p = new DocGia();
-		p->Nhap();
-		if (KTid_book(p->layMaSachMuon()) == false)
+		while (1)
 		{
-			cout << "  <!> Ma sach nay khong co trong thu vien. Nhap lai." << endl;
-		}
-		else
-		{
-			reader.push_back(p);
-			break;
+			string id;
+			cout << "Nhap ma sach muon thu " << i + 1 << ": ";
+			getline(cin, id);
+
+			if (KTid_book(id) == false)
+			{
+				cout << "  <!> Ma sach nay khong co trong thu vien. Nhap lai." << endl;
+			}
+			else
+			{
+				p->ganMaSachMuon(i, id);
+				break;
+			}
 		}
 	}
+	reader.push_back(p);
 }
 
 // Xoa doc gia dua vao MaDocGia
@@ -303,24 +332,32 @@ void Manage::SuaDocGia(string id)
 	}
 	else
 	{
-		while (1)
+		int vitri = layViTriDocGia(id);
+		DocGia* p = new DocGia();
+		cout << " Nhap thong tin doc gia can sua: " << endl;
+		p->Nhap();
+		cin.ignore();
+		for (int i = 0; i < p->laySoSachMuon(); i++)
 		{
-			int vitri = layViTriDocGia(id);
-			DocGia* p = new DocGia();
-			cout << " Nhap thong tin doc gia can sua: " << endl;
-			p->Nhap();
-			if (KTid_book(p->layMaSachMuon()) == false)
+			while (1)
 			{
-				cout << "  <!> Ma sach nay khong co trong thu vien. Nhap lai." << endl;
-			}
-			else
-			{
-				reader[vitri] = p;
-				break;
+				string id;
+				cout << "Nhap ma sach muon thu " << i + 1 << ": ";
+				getline(cin, id);
+
+				if (KTid_book(id) == false)
+				{
+					cout << "  <!> Ma sach nay khong co trong thu vien. Nhap lai." << endl;
+				}
+				else
+				{
+					p->ganMaSachMuon(i, id);
+					break;
+				}
 			}
 		}
-		cout << "   -> 100% - Da sua thanh cong." << endl;
-		
+		reader[vitri] = p;
+		cout << "   -> 100% - Da sua thanh cong." << endl;	
 	}
 }
 
@@ -342,19 +379,23 @@ DocGia* Manage::TimDocGia(string id)
 // tinh tien phat cua doc gia co MaDocGia la id
 float Manage::TienPhat(DocGia* p)
 {
+	float s = 0;
 	int soNgay = p->KhoangThoiGian(p->layNgay(), p->layThang(), p->layNam());
-	if (TimSach(p->layMaSachMuon())->KTSachTiengViet() == true)
+	if (soNgay > 7)
 	{
-		if (soNgay > 7)
-			return ((soNgay - 7) * 10000);
-		else return 0;
+		for (int i = 0; i < p->laySoSachMuon(); i++)
+		{
+			if (TimSach(p->layMaSachMuon(i))->KTSachTiengViet() == true)
+			{
+				s += (soNgay - 7) * 10000;
+			}
+			else
+			{
+				s += (soNgay - 7) * 20000;
+			}
+		}
 	}
-	else
-	{
-		if (soNgay > 7)
-			return ((soNgay - 7) * 20000);
-		else return 0;
-	}
+	return s;
 }
 
 
@@ -380,19 +421,23 @@ void Manage::PhieuMuon(ofstream& out)
 	{
 		for (int i = 0; i < reader.size(); i++)
 		{
-			out << "\n ____________________ PHIEU MUON SACH ____________________ " << endl << endl;
+			out << "\n _____________________ PHIEU MUON SACH ______________________" << endl << endl;
 			out << "Thoi gian in phieu: " << daynow << "/" << monthnow << "/" << yearnow << "  " << hournow << ":" << minutenow << endl << endl;
-			//reader[i]->Xuat(out);
 			out << "     Ma doc gia:              " << reader[i]->layMaDocGia() << endl;
 			out << "     Ten doc gia:             " << reader[i]->layTenDocGia() << endl;
 			out << "     Ngay muon sach:          " << reader[i]->layNgay() << "/" << reader[i]->layThang() << "/" << reader[i]->layNam() << endl;
+			out << "     So sach muon:            " << reader[i]->laySoSachMuon() << endl;
 			out << "\n               -----Thong tin sach da muon----- " << endl;
-			SachTiengViet* p = TimSach(reader[i]->layMaSachMuon());
-			if (p->KTSachTiengViet() == true)
-				out << "     Loai sach muon:          Sach Tieng Viet" << endl;
-			else
-				out << "     Loai sach muon:          Sach Ngoai van" << endl;
-			p->XuatDayDu(out);
+			for (int j = 0; j < reader[i]->laySoSachMuon(); j++)
+			{
+				out << "\n   Quyen thu " << j + 1 << ":" << endl;
+				SachTiengViet* p = TimSach(reader[i]->layMaSachMuon(j));
+				if (p->KTSachTiengViet() == true)
+					out << "     Loai sach muon:          Sach Tieng Viet" << endl;
+				else
+					out << "     Loai sach muon:          Sach Ngoai van" << endl;
+				p->XuatDayDu(out);
+			}
 			out << "\n                                        Quan ly thu vien" << endl;
 			out << "____________________________________________________________\n" << endl << endl;
 		}
@@ -423,17 +468,21 @@ void Manage::PhieuMuon(ofstream& out, string ID)
 	{
 		out << "\n ____________________ PHIEU MUON SACH ____________________ " << endl << endl;
 		out << "Thoi gian in phieu: " << daynow << "/" << monthnow << "/" << yearnow << "  " << hournow << ":" << minutenow << endl << endl;
-		//reader[i]->Xuat(out);
 		out << "     Ma doc gia:              " << p->layMaDocGia() << endl;
 		out << "     Ten doc gia:             " << p->layTenDocGia() << endl;
 		out << "     Ngay muon sach:          " << p->layNgay() << "/" << p->layThang() << "/" << p->layNam() << endl;
+		out << "     So sach muon:            " << p->laySoSachMuon() << endl;
 		out << "\n               -----Thong tin sach da muon----- " << endl;
-		SachTiengViet* q = TimSach(p->layMaSachMuon());
-		if (q->KTSachTiengViet() == true)
-			out << "     Loai sach muon:          Sach Tieng Viet" << endl;
-		else
-			out << "     Loai sach muon:          Sach Ngoai van" << endl;
-		q->XuatDayDu(out);
+		for (int j = 0; j < p->laySoSachMuon(); j++)
+		{
+			out << "\n   Quyen thu " << j + 1 << ":" << endl;
+			SachTiengViet* q = TimSach(p->layMaSachMuon(j));
+			if (q->KTSachTiengViet() == true)
+				out << "     Loai sach muon:          Sach Tieng Viet" << endl;
+			else
+				out << "     Loai sach muon:          Sach Ngoai van" << endl;
+			q->XuatDayDu(out);
+		}
 		out << "\n                                        Quan ly thu vien" << endl;
 		out << "____________________________________________________________\n" << endl << endl;
 		
@@ -468,13 +517,18 @@ void Manage::PhieuTra(ofstream& out)
 			out << "     Ma doc gia:              " << reader[i]->layMaDocGia() << endl;
 			out << "     Ten doc gia:             " << reader[i]->layTenDocGia() << endl;
 			out << "     Ngay muon sach:          " << reader[i]->layNgay() << "/" << reader[i]->layThang() << "/" << reader[i]->layNam() << endl;
+			out << "     So sach muon:            " << reader[i]->laySoSachMuon() << endl;
 			out << "\n               -----Thong tin sach da muon----- " << endl;
-			SachTiengViet* p = TimSach(reader[i]->layMaSachMuon());
-			if (p->KTSachTiengViet() == true)
-				out << "     Loai sach muon:          Sach Tieng Viet" << endl;
-			else
-				out << "     Loai sach muon:          Sach Ngoai van" << endl;
-			p->XuatDayDu(out);
+			for (int j = 0; j < reader[i]->laySoSachMuon(); j++)
+			{
+				out << "\n   Quyen thu " << j + 1 << ":" << endl;
+				SachTiengViet* p = TimSach(reader[i]->layMaSachMuon(j));
+				if (p->KTSachTiengViet() == true)
+					out << "     Loai sach muon:          Sach Tieng Viet" << endl;
+				else
+					out << "     Loai sach muon:          Sach Ngoai van" << endl;
+				p->XuatDayDu(out);
+			}
 			out << "  -> Ngay tra: " << daynow << "/" << monthnow << "/" << yearnow << endl;
 			out << "\n                                        Quan ly thu vien" << endl;
 			out << "____________________________________________________________\n" << endl << endl;
@@ -509,13 +563,18 @@ void Manage::PhieuTra(ofstream& out, string ID)
 		out << "     Ma doc gia:              " << p->layMaDocGia() << endl;
 		out << "     Ten doc gia:             " << p->layTenDocGia() << endl;
 		out << "     Ngay muon sach:          " << p->layNgay() << "/" << p->layThang() << "/" << p->layNam() << endl;
+		out << "     So sach muon:            " << p->laySoSachMuon() << endl;
 		out << "\n               -----Thong tin sach da muon----- " << endl;
-		SachTiengViet* q = TimSach(p->layMaSachMuon());
-		if (q->KTSachTiengViet() == true)
-			out << "     Loai sach muon:          Sach Tieng Viet" << endl;
-		else
-			out << "     Loai sach muon:          Sach Ngoai van" << endl;
-		q->XuatDayDu(out);
+		for (int j = 0; j < p->laySoSachMuon(); j++)
+		{
+			out << "\n   Quyen thu " << j + 1 << ":" << endl;
+			SachTiengViet* q = TimSach(p->layMaSachMuon(j));
+			if (q->KTSachTiengViet() == true)
+				out << "     Loai sach muon:          Sach Tieng Viet" << endl;
+			else
+				out << "     Loai sach muon:          Sach Ngoai van" << endl;
+			q->XuatDayDu(out);
+		}
 		out << "  -> Ngay tra: " << daynow << "/" << monthnow << "/" << yearnow << endl;
 		out << "\n                                        Quan ly thu vien" << endl;
 		out << "____________________________________________________________\n" << endl << endl;
@@ -549,13 +608,18 @@ void Manage::QuaHan(ofstream& out)
 			out << "     Ma doc gia:              " << reader[i]->layMaDocGia() << endl;
 			out << "     Ten doc gia:             " << reader[i]->layTenDocGia() << endl;
 			out << "     Ngay muon sach:          " << reader[i]->layNgay() << "/" << reader[i]->layThang() << "/" << reader[i]->layNam() << endl;
+			out << "     So sach muon:            " << reader[i]->laySoSachMuon() << endl;
 			out << "\n               -----Thong tin sach da muon----- " << endl;
-			SachTiengViet* q = TimSach(p->layMaSachMuon());
-			if (q->KTSachTiengViet() == true)
-				out << "     Loai sach muon:          Sach Tieng Viet" << endl;
-			else
-				out << "     Loai sach muon:          Sach Ngoai van" << endl;
-			q->XuatDayDu(out);
+			for (int j = 0; j < reader[i]->laySoSachMuon(); j++)
+			{
+				out << "\n   Quyen thu " << j + 1 << ":" << endl;
+				SachTiengViet* q = TimSach(reader[i]->layMaSachMuon(j));
+				if (q->KTSachTiengViet() == true)
+					out << "     Loai sach muon:          Sach Tieng Viet" << endl;
+				else
+					out << "     Loai sach muon:          Sach Ngoai van" << endl;
+				q->XuatDayDu(out);
+			}
 			out << "   ==> So tien phat:          " << TienPhat(p)/1000 << " nghin VND" << endl << endl;
 		}
 	}
@@ -571,32 +635,30 @@ void Manage::QuaHan(ofstream& out)
 
 
 // Doc mang sach tu file
-vector<SachTiengViet*> Manage::DocMangSachTuFile() const
+vector<SachTiengViet*> Manage::DocMangSachTuFile()
 {
 	vector<SachTiengViet*> _book;
 	ifstream boDoc;
-	// mo file
 	boDoc.open("book_list_manage.txt");
-	//if (boDoc == NULL)
-	//	return 0;
+	
 	int idx, n;
 	boDoc >> n;
+
 	for (int i = 0; i < n; i++)
 	{
-		SachTiengViet* p;
-		SachNgoaiVan* q;
 		boDoc >> idx;
+
 		if (idx == 1)
 		{
-			p = new SachTiengViet();
+			SachTiengViet* p = new SachTiengViet();
 			p->DocSach(boDoc);
 			_book.push_back(p);
 		}
 		else
 		{
-			q = new SachNgoaiVan();
-			q->DocSach(boDoc);
-			_book.push_back(q);
+			SachNgoaiVan* p = new SachNgoaiVan();
+			p->DocSach(boDoc);
+			_book.push_back(p);
 		}
 	}
 
@@ -605,14 +667,12 @@ vector<SachTiengViet*> Manage::DocMangSachTuFile() const
 }
 
 // Doc mang doc gia tu file
-vector<DocGia*> Manage::DocMangDocGiaTuFile() const
+vector<DocGia*> Manage::DocMangDocGiaTuFile()
 {
 	vector<DocGia*> _reader;
 	ifstream boDoc;
-	// mo file
 	boDoc.open("reader_list_manage.txt");
-	//if (!boDoc)
-	//	return _reader;
+	
 	int n;
 	boDoc >> n;
 	boDoc.ignore();

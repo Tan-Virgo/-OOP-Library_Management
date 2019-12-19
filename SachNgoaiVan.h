@@ -32,14 +32,14 @@ public:
 
 
 	// Doc sach Ngoai Van tu file
-	SachNgoaiVan DocSach(ifstream& DocSach);
+	SachNgoaiVan& DocSach(ifstream& DocSach);
 
 public:
 	// ham tao khong doi so
-	SachNgoaiVan() : SachTiengViet() {}
-	//{
-	//	ISBN = "";
-	//}
+	SachNgoaiVan() : SachTiengViet()
+	{
+		ISBN = "";
+	}
 
 	// ham tao co doi so
 	SachNgoaiVan(string id, string name, string author, string producer, int price, string str)
